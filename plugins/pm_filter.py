@@ -148,7 +148,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("𝐋𝐢𝐧𝐤 𝐄𝐱𝐩𝐢𝐫𝐞𝐝 𝐊𝐢𝐧𝐝𝐥𝐲 𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐞𝐚𝐫𝐜𝐡 𝐀𝐠𝐚𝐢𝐧 🙂.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('𝙲𝙷𝙴𝙲𝙺𝙸𝙽𝙶 𝙵𝙸𝙻𝙴 𝙾𝙽 𝙼𝚈 𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴...//')
+    await query.answer('ഇപ്പൊ ശെരി ആക്കി തരാം')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -156,7 +156,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('𝚃𝙷𝙸𝚂 𝙼𝙾𝚅𝙸𝙴 I𝚂 𝙽𝙾𝚃 𝚈𝙴𝚃 𝚁𝙴𝙻𝙴𝙰𝚂𝙴𝙳 𝙾𝚁 𝙰𝙳𝙳𝙴𝙳 𝚃𝙾 𝙳𝙰𝚃𝚂𝙱𝙰𝚂𝙴 💌')
+            k = await query.message.edit('ഞാൻ എന്റെ ലൈബ്രറി ഒന്ന് നോക്കിക്കോട്ടെ')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -178,7 +178,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('𝙿𝙻𝙴𝙰𝚂𝙴 𝚂𝙷𝙰𝚁𝙴 𝙰𝙽𝙳 𝚂𝚄𝙿𝙿𝙾𝚁𝚃')
+                    return await query.answer('⚠️ 𝖩𝗈𝗂𝗇 𝖮𝗎𝗋 𝖮𝖿𝖿𝗂𝖼𝗂𝖺𝗅 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖥𝗈𝗋 𝖭𝖾𝗐 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 ⚠️')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
@@ -191,7 +191,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             title = query.message.chat.title
 
         else:
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('⚠️ 𝖩𝗈𝗂𝗇 𝖮𝗎𝗋 𝖮𝖿𝖿𝗂𝖼𝗂𝖺𝗅 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖥𝗈𝗋 𝖭𝖾𝗐 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 ⚠️')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -425,7 +425,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-        InlineKeyboardButton('⭕️ Join Our Channel ⭕️', url='https://t.me/MovieClubOfficiall')
+        InlineKeyboardButton('💠 Channel', url='https://t.me/SeriesXOfficial'),
+        InlineKeyboardButton('♻️ Group', url ='https://t.me/SeriesLandChat')
     ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -718,7 +719,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎬 Title:</b> <b>{search}</b>\n<b>📆 Release:</b> <code>N/A</code>\n<b>🌟 Rating:</b> <code>N/A</code>\n<b>🎭 Genres:</b> <code>N/A</code>\n<b>📀 Runtime:</b> <code>N/A</code>\n<b>☀️ Languages:</b> <code>N/A</code>\n<b>🌎 Country of Origin:</b> <code>N/A</code>\n<b>👤 Requested By:</b> <b>{message.from_user.mention}</b>"
+        cap = f"<b>○ Title:</b> <code>{search}</code>\n<b>○ Season:</b> <code>N/A</code>\n<b>○ Released on:</b> <code>N/A</code>\n<b>○ Genres:</b> <code>N/A</code>\n<b>○ Rating:</b> <code>None</code>\n<b>○ Selected Language:</b> <code>N/A</code>\n\n<i>Select Which Files You Want..!</i>"
     if imdb and imdb.get('poster'):
         try:
             hehe =  await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
